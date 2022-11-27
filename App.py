@@ -1,4 +1,5 @@
 import csv
+import sys
 
 student_fields = ['Roll', 'Name', 'ID No.', 'Program', 'Year']
 student_database = 'students.csv'
@@ -7,7 +8,7 @@ student_database = 'students.csv'
 def show_menu():
     print("Student Database Management System")
     while True:
-        print ("Main Menu: ")
+        print ("\nMain Menu: ")
         print("1. Add New Student")
         print("2. View Student Information")
         print("3. Search Student Information")
@@ -37,10 +38,9 @@ def show_menu():
             delete_student()
 
         elif choice == 6:
-            print ("Thank you for using the application!")
-
+            print ("\nThank you for using the application!\n\n")
+            sys.exit()
         else:
-            print ("Invalid Input! Try again...")
             break
 
 
@@ -174,3 +174,4 @@ def delete_student():
     input("Press any key to continue...")
 
 show_menu()
+
