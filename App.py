@@ -9,26 +9,22 @@ def showMenu():
     print("\n\n\t\t\t**Student Database Management System**")
     while True:
         print ("\n\t\tMain Menu: ")
-        print("\t\t\t1. Add New Student")
-        print("\t\t\t2. View Student Information")
-        print("\t\t\t3. Search Student Information")
-        print("\t\t\t4. Update Student Information")
-        print("\t\t\t5. Delete Student Information")
-        print("\t\t\t6. Quit")
+        print("\t\t\t(1) Add New Student")
+        print("\t\t\t(2) View Student Information")
+        print("\t\t\t(3) Search Student Information")
+        print("\t\t\t(4) Update Student Information")
+        print("\t\t\t(5) Delete Student Information")
+        print("\t\t\t(6) Quit Application")
 
         choice = ""
-        try: 
+        try:
             choice = int(input("\n\t\tEnter your choice: "))
-            if choice != 1 or choice != 2 or choice != 3 or choice != 4 or choice != 5 or choice != 6:
-               print ("\n\t\tInvalid Input! Enter choice from the ff. [1,2,3,4,5, or 6]")
-               choice = int(input("\n\t\tRe-enter choice: "))
-
+                
         except ValueError:
             print ("\n\t\tInvalid Input! Choice should be a number.")
             response = (input("\n\t\tTry again? [y/n]: "))
-            if response == 'y':
+            while response == 'y':
                 choice = int(input("\n\t\tEnter your choice: "))
-            else:
                 break
 
         if choice == 1:
@@ -47,14 +43,14 @@ def showMenu():
             deleteStudent()
 
         elif choice == 6:
-            print ("\nThank you for using the application!\n\n")
+            print ("\n\t\t\t**Thank you for using the application!**\n\n")
             sys.exit()
         else:
             break
 
 
 def addStudent():
-    print("Add Student Information")
+    print("\n\t\t\tAdd Student Information")
     global student_fields
     global student_database
 
