@@ -5,37 +5,46 @@ student_fields = ['Roll', 'Name', 'ID No.', 'Program', 'Year']
 student_database = 'students.csv'
 
 
-def show_menu():
-    print("Student Database Management System")
+def showMenu():
+    print("\n\n\t\t\t**Student Database Management System**")
     while True:
-        print ("\nMain Menu: ")
-        print("1. Add New Student")
-        print("2. View Student Information")
-        print("3. Search Student Information")
-        print("4. Update Student Information")
-        print("5. Delete Student Information")
-        print("6. Quit")
+        print ("\n\t\tMain Menu: ")
+        print("\t\t\t1. Add New Student")
+        print("\t\t\t2. View Student Information")
+        print("\t\t\t3. Search Student Information")
+        print("\t\t\t4. Update Student Information")
+        print("\t\t\t5. Delete Student Information")
+        print("\t\t\t6. Quit")
 
         choice = ""
         try: 
-            choice = int(input("Enter your choice: "))
+            choice = int(input("\n\t\tEnter your choice: "))
+            if choice != 1 or choice != 2 or choice != 3 or choice != 4 or choice != 5 or choice != 6:
+               print ("\n\t\tInvalid Input! Enter choice from the ff. [1,2,3,4,5, or 6]")
+               choice = int(input("\n\t\tRe-enter choice: "))
+
         except ValueError:
-            print ("Invalid Input! Enter choice from the ff. [1,2,3,4,5, or 6].")
+            print ("\n\t\tInvalid Input! Choice should be a number.")
+            response = (input("\n\t\tTry again? [y/n]: "))
+            if response == 'y':
+                choice = int(input("\n\t\tEnter your choice: "))
+            else:
+                break
 
         if choice == 1:
-            add_student()
+            addStudent()
 
         elif choice == 2:
-            view_students()
+            viewStudents()
 
         elif choice == 3:
-            search_student()
+            searchStudent()
 
         elif choice == 4:
-            update_student()
+            updateStudent()
 
         elif choice == 5:
-            delete_student()
+            deleteStudent()
 
         elif choice == 6:
             print ("\nThank you for using the application!\n\n")
@@ -44,7 +53,7 @@ def show_menu():
             break
 
 
-def add_student():
+def addStudent():
     print("Add Student Information")
     global student_fields
     global student_database
@@ -64,7 +73,7 @@ def add_student():
     return
 
 
-def view_students():
+def viewStudents():
     global student_fields
     global student_database
 
@@ -84,7 +93,7 @@ def view_students():
     input("Press any key to continue...")
 
 
-def search_student():
+def searchStudent():
     global student_fields
     global student_database
 
@@ -107,7 +116,7 @@ def search_student():
     input("Press any key to continue...")
 
 
-def update_student():
+def updateStudent():
     global student_fields
     global student_database
 
@@ -144,7 +153,7 @@ def update_student():
     input("Press any key to continue...")
 
 
-def delete_student():
+def deleteStudent():
     global student_fields
     global student_database
 
@@ -173,5 +182,4 @@ def delete_student():
 
     input("Press any key to continue...")
 
-show_menu()
-
+showMenu()
