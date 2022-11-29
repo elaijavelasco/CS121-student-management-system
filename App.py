@@ -50,14 +50,14 @@ def showMenu():
 
 
 def addStudent():
-    print("\n\t\t\tAdd Student Information")
+    print("\n\t\t\tAdd Student Information\n")
     global student_fields
     global student_database
 
 
     student_data = []
     for field in student_fields:
-        value = input("Enter " + field + ": ")
+        value = input("\t\t\tEnter " + field + ": ")
         student_data.append(value)
 
     with open(student_database, "a", encoding="utf-8") as f:
