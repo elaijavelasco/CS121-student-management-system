@@ -6,9 +6,11 @@ student_database = 'students.csv'
 
 
 def showMenu():
-    print("\n\n\t\t\t**Student Management System**")
+    print("\n\t\t------------------------------------------------")
+    print("\n\t\t\t  **Student Management System**")
+    print("\n\t\t------------------------------------------------")
     while True:
-        print ("\n\t\tMain Menu: ")
+        print ("\n\t\tMain Menu:\n")
         print("\t\t\t(1) Add New Student")
         print("\t\t\t(2) View Student Information")
         print("\t\t\t(3) Search Student Information")
@@ -43,7 +45,9 @@ def showMenu():
             deleteStudent()
 
         elif choice == 6:
-            print ("\n\t\t\t**Thank you for using the application!**\n\n")
+            print("\n\t\t------------------------------------------------")
+            print ("\n\t\t    **Thank you for using the application!**\n")
+            print("\t\t------------------------------------------------\n\n\n")
             sys.exit()
         else:
             break
@@ -73,7 +77,7 @@ def viewStudents():
     global student_fields
     global student_database
 
-    print("Student Records")
+    print("\n\t\t\tStudent Records\n")
 
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -86,15 +90,15 @@ def viewStudents():
                 print(item, end="\t   |")
             print("\n")
 
-    input("Press any key to continue...")
+    input("\n\t\tPress any key to continue...")
 
 
 def searchStudent():
     global student_fields
     global student_database
 
-    print("Search Student Information")
-    roll = input("Enter roll no. to search: ")
+    print("\n\t\t\tSearch Student Information\n")
+    roll = input("\t\t\tEnter roll no. to search: ")
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
@@ -108,16 +112,16 @@ def searchStudent():
                     print("Year: ", row[4])
                     break
         else:
-            print("Roll No. not found in our database.")
-    input("Press any key to continue...")
+            print("\n\t\t\tRoll No. not found in our database.\n")
+    input("\t\tPress any key to continue...")
 
 
 def updateStudent():
     global student_fields
     global student_database
 
-    print("Update Student Information")
-    roll = input("Enter roll no. to update: ")
+    print("\n\t\t\tUpdate Student Information\n")
+    roll = input("\t\t\tEnter roll no. to update: ")
     index_student = None
     updated_data = []
     with open(student_database, "r", encoding="utf-8") as f:
@@ -144,17 +148,17 @@ def updateStudent():
             writer = csv.writer(f)
             writer.writerows(updated_data)
     else:
-        print("Roll No. not found in our database.")
+        print("\n\t\t\tRoll No. not found in our database.\n")
 
-    input("Press any key to continue...")
+    input("\t\tPress any key to continue...")
 
 
 def deleteStudent():
     global student_fields
     global student_database
 
-    print("Delete Student Information")
-    roll = input("Enter roll no. to delete: ")
+    print("\n\t\t\t ***Delete Student Information***\n")
+    roll = input("\t\t\tEnter roll no. to delete: ")
     student_found = False
     updated_data = []
     with open(student_database, "r", encoding="utf-8") as f:
@@ -174,8 +178,8 @@ def deleteStudent():
             writer.writerows(updated_data)
         print("Roll no. ", roll, "deleted successfully!")
     else:
-        print("Roll No. not found in our database.")
+        print("\n\t\t\tRoll No. not found in our database.\n")
 
-    input("Press any key to continue...")
+    input("\t\tPress any key to continue...")
 
 showMenu()
