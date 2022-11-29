@@ -6,7 +6,7 @@ student_database = 'students.csv'
 
 
 def showMenu():
-    print("\n\n\t\t\t**Student Database Management System**")
+    print("\n\n\t\t\t**Student Management System**")
     while True:
         print ("\n\t\tMain Menu: ")
         print("\t\t\t(1) Add New Student")
