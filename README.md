@@ -13,7 +13,7 @@ Final Project in CS 121- Advanced Computer Programming
 + Delete Student Information
 
 ## :computer: How to Run the program
-1. Click the link: to be directed to the project's repository.
+1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
 2. Click on the Code button, then download the repository as ZIP file.
 
 ## How to Use the program
