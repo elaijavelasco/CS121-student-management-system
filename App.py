@@ -6,6 +6,9 @@ student_database = 'students.csv'
 
 
 def showMenu():
+    global student_fields
+    global student_database
+
     print("\n\t\t------------------------------------------------")
     print("\n\t\t\t  **Student Management System**")
     print("\n\t\t------------------------------------------------")
@@ -45,13 +48,13 @@ def showMenu():
             deleteStudent()
 
         elif choice == 6:
+            input("Closing Program..... \nPlease press any key to continue\n")
             print("\n\t\t------------------------------------------------")
             print ("\n\t\t    **Thank you for using the application!**\n")
             print("\t\t------------------------------------------------\n\n\n")
             sys.exit()
         else:
             break
-
 
 def addStudent():
     print("\n\t\t\tAdd Student Information\n")
