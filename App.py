@@ -4,11 +4,12 @@ import sys
 student_fields = ['Roll', 'Full Name', 'ID Number', 'Program', 'Year Level']
 student_database = 'students.csv'
 
-
+#function to display menu
 def showMenu():
     print("\n",71*'-')
     print("\n\t\t\tStudent Management System")
     print("\n",71*'-')
+
     while True:
         print ("\n\t\tMain Menu:\n")
         print("\t\t\t(1) Add New Student")
@@ -18,10 +19,11 @@ def showMenu():
         print("\t\t\t(5) Delete Student Record")
         print("\t\t\t(6) Quit Application")
 
+    #input choice
         choice = ""
         try:
             choice = int(input("\n\t\tWhat do you want to do? "))
-                
+    #handle input error      
         except ValueError:
             print ("\n\t\tInvalid Entry! Input should be a number.")
             response = (input("\n\t\tTry again? [y/n]: "))
@@ -32,19 +34,19 @@ def showMenu():
                 break
 
         if choice == 1:
-            addStudent()
+            addRecord()
 
         elif choice == 2:
-            viewStudents()
+            viewRecords()
 
         elif choice == 3:
-            searchStudent()
+            searchRecord()
 
         elif choice == 4:
-            updateStudent()
+            updateRecord()
 
         elif choice == 5:
-            deleteStudent()
+            deleteRecord()
 
         elif choice == 6:
             print("\n\n",71*'-')
@@ -54,12 +56,11 @@ def showMenu():
         else:
             break
 
-
-def addStudent():
+#function to add student record
+def addRecord():
     print("\n\n\t\t\t** Add Student Record **\n")
     global student_fields
     global student_database
-
 
     student_data = []
 
@@ -80,8 +81,8 @@ def addStudent():
     print("\n")
     return
 
-
-def viewStudents():
+#function to view student records
+def viewRecords():
     global student_fields
     global student_database
 
@@ -102,8 +103,8 @@ def viewStudents():
     input("\t\t\tPress any key to continue...")
     print("\n")
 
-
-def searchStudent():
+#function to search student record
+def searchRecord():
     global student_fields
     global student_database
 
@@ -124,12 +125,12 @@ def searchStudent():
                     print("\n",71*'=')
                     break
         else:
-            print("\n\n\t\t\tRoll number not found in our database!")
+            print("\n\n\t\t** Roll number not found in our database! **")
     input("\n\n\t\t\tPress any key to continue...")
     print("\n")
 
-
-def updateStudent():
+#function to update student records
+def updateRecord():
     global student_fields
     global student_database
 
@@ -153,6 +154,7 @@ def updateStudent():
                         student_data.append(value)
                     updated_data.append(student_data)
                     print("\n",71*'=')
+                    print("\n\n\t\t\t** Data saved successfully! **")
                     
                     print
                 else:
@@ -164,14 +166,13 @@ def updateStudent():
             writer = csv.writer(f)
             writer.writerows(updated_data)
     else:
-        print("\n\t\t\tRoll No. not found in our database.\n")
+        print("\n\t\t** Roll number not found in our database! **\n")
 
-    print("\n\n\t\t\t** Data saved successfully! **")
     input("\n\t\t\tPress any key to continue...")
     print("\n")
 
-
-def deleteStudent():
+#function to delete student records
+def deleteRecord():
     global student_fields
     global student_database
 
@@ -199,7 +200,7 @@ def deleteStudent():
         print("\n",71*'=')
 
     else:
-        print("\n\t\t\tRoll number not found in our database! \n")
+        print("\n\t\t** Roll number not found in our database! **\n")
 
     input("\n\n\t\t\tPress any key to continue...")
     print("\n")
