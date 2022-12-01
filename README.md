@@ -19,6 +19,3 @@ Final Project in CS 121- Advanced Computer Programming
 4. Open the unzipped or the extracted folder and find **App.py** file.
 5. Open the file via any IDE that supports Python programming language.
 6. Then, run the file to launch the application.
-
-
-## How to Use the program
