@@ -15,5 +15,10 @@ Final Project in CS 121- Advanced Computer Programming
 ## :computer: How to Run the program
 1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
 2. Click on the Code button, then download the repository as ZIP file.
+3. Locate the downloaded ZIP file, likely in your Downloads folder, and unzip it.
+4. Open the unzipped or the extracted folder and find **App.py** file.
+5. Open the file via any IDE that supports Python programming language.
+6. Then, run the file to launch the application.
+
 
 ## How to Use the program
