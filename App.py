@@ -7,23 +7,23 @@ student_database = 'students.csv'
 
 def showMenu():
     print("\n",71*'-')
-    print("\n\t\t    ** Student Management System **")
+    print("\n\t\t\tStudent Management System")
     print("\n",71*'-')
     while True:
         print ("\n\t\tMain Menu:\n")
         print("\t\t\t(1) Add New Student")
-        print("\t\t\t(2) View Student Information")
-        print("\t\t\t(3) Search Student Information")
-        print("\t\t\t(4) Update Student Information")
-        print("\t\t\t(5) Delete Student Information")
+        print("\t\t\t(2) View Student Records")
+        print("\t\t\t(3) Search Student Record")
+        print("\t\t\t(4) Update Student Record")
+        print("\t\t\t(5) Delete Student Record")
         print("\t\t\t(6) Quit Application")
 
         choice = ""
         try:
-            choice = int(input("\n\t\tEnter your choice: "))
+            choice = int(input("\n\t\tWhat do you want to do? "))
                 
         except ValueError:
-            print ("\n\t\tInvalid Input! Choice should be a number.")
+            print ("\n\t\tInvalid Entry! Input should be a number.")
             response = (input("\n\t\tTry again? [y/n]: "))
             while response == 'y':
                 choice = int(input("\n\t\tEnter your choice: "))
@@ -54,7 +54,7 @@ def showMenu():
 
 
 def addStudent():
-    print("\n\t\t\t***Add Student Information***\n")
+    print("\n\n\t\t\t** Add Student Information **\n")
     global student_fields
     global student_database
 
@@ -68,8 +68,9 @@ def addStudent():
         writer = csv.writer(f)
         writer.writerows([student_data])
 
-    print("\n\t\t\tData saved successfully! ")
+    print("\n\n\t\t\t** Data saved successfully! **")
     input("\n\t\t\tPress any key to continue...")
+    print("\n")
     return
 
 
@@ -91,7 +92,7 @@ def viewStudents():
                 print(item, end="\t|   ")
             print("\n")
     
-    input("\n\t\t\tPress any key to continue...")
+    input("\t\t\tPress any key to continue...")
     print("\n")
 
 
@@ -99,30 +100,33 @@ def searchStudent():
     global student_fields
     global student_database
 
-    print("\n\t\t\tSearch Student Information\n")
-    roll = input("\t\t\tEnter roll no. to search: ")
+    print("\n\t\t\t** Search Student Information **\n")
+    roll = input("\t\t\tEnter roll number to search: ")
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
             if len(row) > 0:
                 if roll == row[0]:
-                    print("Student: ")
-                    print("Roll: ", row[0])
-                    print("Name: ", row[1])
-                    print("SR-CODE: ", row[2])
-                    print("Program: ", row[3])
-                    print("Year: ", row[4])
+                    print("\n\t\t\t",34*'=')
+                    print("\n\t\t\t\t   Student Record\n")
+                    print("\t\t\t    Roll: ", row[0])
+                    print("\t\t\t    Full Name: ", row[1])
+                    print("\t\t\t    ID Number: ", row[2])
+                    print("\t\t\t    Program: ", row[3])
+                    print("\t\t\t    Year Level: ", row[4])
+                    print("\n\t\t\t",34*'=')
                     break
         else:
-            print("\n\t\t\tRoll No. not found in our database.\n")
-    input("\t\tPress any key to continue...")
+            print("\n\n\t\t\tRoll number not found in our database!")
+    input("\n\n\t\t\tPress any key to continue...")
+    print("\n")
 
 
 def updateStudent():
     global student_fields
     global student_database
 
-    print("\n\t\t\tUpdate Student Information\n")
+    print("\n\t\t\t** Update Student Information **\n")
     roll = input("\t\t\tEnter roll no. to update: ")
     index_student = None
     updated_data = []
@@ -133,7 +137,7 @@ def updateStudent():
             if len(row) > 0:
                 if roll == row[0]:
                     index_student = counter
-                    print("Student Found: at index ",index_student)
+                    print("Student found at index [",index_student, "] ")
                     student_data = []
                     for field in student_fields:
                         value = input("Enter " + field + ": ")
@@ -152,7 +156,7 @@ def updateStudent():
     else:
         print("\n\t\t\tRoll No. not found in our database.\n")
 
-    input("\t\tPress any key to continue...")
+    input("\n\t\t\tPress any key to continue...")
 
 
 def deleteStudent():
@@ -160,7 +164,7 @@ def deleteStudent():
     global student_database
 
     print("\n\t\t\t ***Delete Student Information***\n")
-    roll = input("\t\t\tEnter roll no. to delete: ")
+    roll = input("\t\t\tEnter roll number to delete: ")
     student_found = False
     updated_data = []
     with open(student_database, "r", encoding="utf-8") as f:
@@ -180,8 +184,9 @@ def deleteStudent():
             writer.writerows(updated_data)
         print("Roll no. ", roll, "deleted successfully!")
     else:
-        print("\n\t\t\tRoll No. not found in our database.\n")
+        print("\n\t\t\tRoll number not found in our database! \n")
 
-    input("\t\tPress any key to continue...")
+    input("\n\n\t\t\tPress any key to continue...")
+    print("\n")
 
 showMenu()
