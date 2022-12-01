@@ -1,17 +1,14 @@
 import csv
 import sys
 
-student_fields = ['Roll', 'Name', 'ID No.', 'Program', 'Year']
+student_fields = ['Roll', 'Full Name', 'ID Number', 'Program', 'Year Level']
 student_database = 'students.csv'
 
 
 def showMenu():
-    global student_fields
-    global student_database
-
-    print("\n\t\t------------------------------------------------")
-    print("\n\t\t\t  **Student Management System**")
-    print("\n\t\t------------------------------------------------")
+    print("\n",71*'-')
+    print("\n\t\t    ** Student Management System **")
+    print("\n",71*'-')
     while True:
         print ("\n\t\tMain Menu:\n")
         print("\t\t\t(1) Add New Student")
@@ -48,16 +45,16 @@ def showMenu():
             deleteStudent()
 
         elif choice == 6:
-            input("Closing Program..... \nPlease press any key to continue\n")
-            print("\n\t\t------------------------------------------------")
-            print ("\n\t\t    **Thank you for using the application!**\n")
-            print("\t\t------------------------------------------------\n\n\n")
+            print("\n\n",71*'-')
+            print("\n\t\t** Thank you for using the application! **")
+            print("\n",71*'-',"\n\n")
             sys.exit()
         else:
             break
 
+
 def addStudent():
-    print("\n\t\t\tAdd Student Information\n")
+    print("\n\t\t\t***Add Student Information***\n")
     global student_fields
     global student_database
 
@@ -71,8 +68,8 @@ def addStudent():
         writer = csv.writer(f)
         writer.writerows([student_data])
 
-    print("Data saved successfully! ")
-    input("Press any key to continue...")
+    print("\n\t\t\tData saved successfully! ")
+    input("\n\t\t\tPress any key to continue...")
     return
 
 
@@ -80,20 +77,22 @@ def viewStudents():
     global student_fields
     global student_database
 
-    print("\n\t\t\tStudent Records\n")
+    print("\n\n\t\t\t ** Student Records **")
+    print("\n",71*'-')
 
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         for x in student_fields:
-            print(x, end="\t\t|")
-        print("\n-----------------------------------------------------------------\n")
+            print(x, end="\t|   ")
+        print("\n",71*'-')
 
         for row in reader:
             for item in row:
-                print(item, end="\t   |")
+                print(item, end="\t|   ")
             print("\n")
-
-    input("\n\t\tPress any key to continue...")
+    
+    input("\n\t\t\tPress any key to continue...")
+    print("\n")
 
 
 def searchStudent():
