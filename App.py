@@ -25,6 +25,8 @@ def showMenu():
         except ValueError:
             print ("\n\t\tInvalid Entry! Input should be a number.")
             response = (input("\n\t\tTry again? [y/n]: "))
+            print("\n\n")
+
             while response == 'y':
                 choice = int(input("\n\t\tEnter your choice: "))
                 break
@@ -195,7 +197,7 @@ def deleteStudent():
         print("\n",71*'=')
         print("\n\t\t\tRoll no. ", roll, "deleted successfully!")
         print("\n",71*'=')
-        
+
     else:
         print("\n\t\t\tRoll number not found in our database! \n")
 
