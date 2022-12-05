@@ -211,7 +211,7 @@ def deleteRecord():
         print("\n\t\t\tRoll no. ", roll, "deleted successfully!")
         print("\n",71*'=')
 
-#if no record found
+#if no record is found
     else:
         print("\n\t\t** Roll number not found in our database! **\n")
 
