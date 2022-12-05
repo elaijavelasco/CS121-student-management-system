@@ -1,6 +1,7 @@
 import csv
 import sys
 
+#global variables
 student_fields = ['Roll', 'Full Name', 'ID Number', 'Program', 'Year Level']
 student_database = 'students.csv'
 
@@ -160,7 +161,8 @@ def updateRecord():
                 else:
                     updated_data.append(row)
                 counter += 1
-
+                
+    #checks if the student record is found or not
     if index_student is not None:
         with open(student_database, "w", encoding="utf-8") as f:
             writer = csv.writer(f)
