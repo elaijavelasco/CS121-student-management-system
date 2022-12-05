@@ -70,10 +70,13 @@ def addRecord():
 
     for field in student_fields:
         value = input("\t\t\tEnter " + field + ": ")
+    #add inputted value to the list
         student_data.append(value)
     print("\n",71*'=')
 
+    #method to open database
     with open(student_database, "a", encoding="utf-8") as f:
+    #insert the data to csv file
         writer = csv.writer(f)
         writer.writerows([student_data])
 
@@ -90,8 +93,10 @@ def viewRecords():
     print("\n\n\t\t\t ** Student Records **")
     print("\n",71*'-')
 
+    #method to access the student database
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
+        #to access all fields & values
         for x in student_fields:
             print(x, end="\t|   ")
         print("\n",71*'-')
@@ -114,6 +119,7 @@ def searchRecord():
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
+            #returns the object with matching roll number
             if len(row) > 0:
                 if roll == row[0]:
                     print("\n",71*'=')
@@ -125,6 +131,7 @@ def searchRecord():
                     print("\t\t\t Year Level: ", row[4])
                     print("\n",71*'=')
                     break
+    #if no record is found
         else:
             print("\n\n\t\t** Roll number not found in our database! **")
     input("\n\n\t\t\tPress any key to continue...")
@@ -142,7 +149,9 @@ def updateRecord():
     with open(student_database, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         counter = 0
+    #to access the rows
         for row in reader:
+            #to access the roll 
             if len(row) > 0:
                 if roll == row[0]:
                     index_student = counter
@@ -193,6 +202,7 @@ def deleteRecord():
                 else:
                     student_found = True
 
+#checks if the student record is found or not
     if student_found is True:
         with open(student_database, "w", encoding="utf-8") as f:
             writer = csv.writer(f)
@@ -201,6 +211,7 @@ def deleteRecord():
         print("\n\t\t\tRoll no. ", roll, "deleted successfully!")
         print("\n",71*'=')
 
+#if no record found
     else:
         print("\n\t\t** Roll number not found in our database! **\n")
 
