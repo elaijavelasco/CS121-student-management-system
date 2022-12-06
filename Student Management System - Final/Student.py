@@ -1,15 +1,8 @@
+from Admin import Admin_Menu
 import csv
 import sys
 
-class Student_Database:
-    def __init__(self):
-        self.admin_fields = ['Username', 'Password']
-        self.admin_database = 'admin.csv'
-
-class Student_Menu(Student_Database):
-    def __init__(self):
-        super().__init__(self)
-
+class Student:
     def studentMenu(self):
         print("\n",71*'-')
         print("\n\t\t\tStudent Menu")
@@ -32,17 +25,16 @@ class Student_Menu(Student_Database):
                     self.choice = int(input("Enter your choice: "))
                     break
 
-            if choice == 1:
-                self.viewRecords()
+            if self.choice == 1:
+                Admin_Menu.viewRecords(self)
 
-            elif choice == 2:
-                self.searchRecord()
+            elif self.choice == 2:
+                Admin_Menu.searchRecord(self)
 
-            elif choice == 3:
+            elif self.choice == 3:
                 print("\n\n",71*'-')
                 print("\n\t\t** Thank you for using the application! **")
                 print("\n",71*'-',"\n\n")
                 sys.exit()
             else:
                 break
-
