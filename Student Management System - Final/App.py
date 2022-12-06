@@ -1,4 +1,4 @@
-from Student import Student_Menu
+from Student import Student
 from Admin import Admin_Menu
 
 class App:
@@ -22,15 +22,10 @@ class App:
             Admin_Menu.adminMenu(self)
                 
         elif option == 2:
-            Student_Menu.studentMenu(self)
+            Student.studentMenu(self)
     
 def runApp():
     app = App()
     app.userMode()
     
 runApp()
-
-
-
-            
-
