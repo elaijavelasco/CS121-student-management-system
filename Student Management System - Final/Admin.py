@@ -1,12 +1,18 @@
 import csv
+import sys
 
 class Admin:
     def __init__(self, username, password):
         self.username = username
         self.password = password
 
+class Student_Database:
+    def __init__(self):
+        self.student_fields = ['Username', 'Password']
+        self.student_database = 'students.csv'
+
 class Admin_Database:
-    def __init__(self, admin_fields, admin_database):
+    def __init__(self):
         self.admin_fields = ['Username', 'Password']
         self.admin_database = 'admin.csv'
  
@@ -63,7 +69,6 @@ class Admin_Menu(Admin_Database):
             
             else:
                 break
-    
     def login (self):
         username = input("Enter username: ")
         if username not in self.admin_database:
@@ -99,7 +104,7 @@ class Admin_Menu(Admin_Database):
         self.exit()
         return
         
-    def viewRecord(self):
+    def viewRecords (self):
         print("\n\n\t\t\t ** Student Records **")
         print("\n",71*'-')
 
@@ -205,8 +210,9 @@ class Admin_Menu(Admin_Database):
 
         self.exit()
 
-    def admin_logout(self):
-        pass
+    def logout(self):
+        print("Logged out!")
+        sys.exit()
     
     def exit(self):
         input("\n\n\t\t\tPress Enter key to continue...")
