@@ -1,5 +1,5 @@
-from Student import*
-from Admin import*
+from Student import Student_Menu
+from Admin import Admin_Menu
 
 class App:
     def userMode(self):
@@ -19,10 +19,16 @@ class App:
                 break
                 
         if option == 1:
-            self.login()
+            Admin_Menu.adminMenu(self)
                 
         elif option == 2:
-            self.studentMenu()
+            Student_Menu.studentMenu(self)
+    
+def runApp():
+    app = App()
+    app.userMode()
+    
+runApp()
 
 
 

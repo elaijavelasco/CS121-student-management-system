@@ -1,4 +1,3 @@
-from Student import student_database
 import csv
 
 class Admin:
@@ -7,7 +6,7 @@ class Admin:
         self.password = password
 
 class Admin_Database:
-    def __init__(self):
+    def __init__(self, admin_fields, admin_database):
         self.admin_fields = ['Username', 'Password']
         self.admin_database = 'admin.csv'
  
@@ -22,12 +21,13 @@ class Admin_Menu(Admin_Database):
 
         while True:
             print("\n\t\tMain Menu:\n")
-            print("\t\t\t(1) Add New Student")
-            print("\t\t\t(2) View Student Records")
-            print("\t\t\t(3) Search Student Record")
-            print("\t\t\t(4) Update Student Record")
-            print("\t\t\t(5) Delete Student Record")
-            print("\t\t\t(6) Logout")
+            print("\t\t\t(1) Login")
+            print("\t\t\t(2) Add New Student")
+            print("\t\t\t(3) View Student Records")
+            print("\t\t\t(4) Search Student Record")
+            print("\t\t\t(5) Update Student Record")
+            print("\t\t\t(6) Delete Student Record")
+            print("\t\t\t(7) Logout")
 
             self.choice = ""
             try:
@@ -41,25 +41,25 @@ class Admin_Menu(Admin_Database):
                     break
             
             if self.choice == 1:
-                self.login()
+                Admin_Menu.login(self)
 
             if self.choice == 2:
-                self.addRecord()
+                Admin_Menu.addRecord(self)
 
             if self.choice == 3:
-                self.viewRecords()
+                Admin_Menu.viewRecords(self)
 
             if self.choice == 4:
-                self.searchRecord()
+                Admin_Menu.searchRecord(self)
             
             if self.choice == 5:
-                self.updateRecord()
+                Admin_Menu.updateRecord(self)
             
             if self.choice == 6:
-                self.deleteRecord()
+                Admin_Menu.deleteRecord(self)
             
             if self.choice == 7:
-                self.logout()
+                Admin_Menu.logout(self)
             
             else:
                 break
@@ -209,5 +209,5 @@ class Admin_Menu(Admin_Database):
         pass
     
     def exit(self):
-        input("\n\n\t\t\tPress enter key to continue...")
+        input("\n\n\t\t\tPress Enter key to continue...")
         print("\n")
