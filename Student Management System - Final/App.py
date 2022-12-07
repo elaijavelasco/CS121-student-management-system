@@ -11,11 +11,14 @@ class App:
 
         option = ""
         try:
+            
             option = int(input("\nWhat user are you? "))
         except ValueError:
             print("\nInvalid Entry!")
+        except Exception as E:
+            print(E)
+        
             response = (input("\nTry again? [y/n]: "))
-      
             if response == 'y':
                 option = int(input("\nWhat user are you? "))
             else:
