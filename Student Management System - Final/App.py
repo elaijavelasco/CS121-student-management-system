@@ -1,6 +1,7 @@
 from Student import Student
 from Admin import Admin
 import sys
+import msvcrt as m
 
 class App:
     def userMode(self):
@@ -11,7 +12,7 @@ class App:
 
         option = ""
         try:
-            
+
             option = int(input("\nWhat user are you? "))
         except ValueError:
             print("\nInvalid Entry!")
@@ -32,6 +33,9 @@ class App:
             Student.studentMenu(self)
         
         elif option == 3:
+            print(".....Exiting.....")
+            print("\n........Press any key to continue.......")
+            m.getch()
             sys.exit()
         else:
             print("\nInvalid Entry! Input should be from the option.\n")
