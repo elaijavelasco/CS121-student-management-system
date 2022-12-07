@@ -1,4 +1,4 @@
-from Admin import Admin_Menu
+from Admin import Admin
 import csv
 import sys
 
@@ -26,10 +26,10 @@ class Student:
                     break
 
             if self.choice == 1:
-                Admin_Menu.viewRecords(self)
+                Admin.viewRecords(self)
 
             elif self.choice == 2:
-                Admin_Menu.searchRecord(self)
+                Admin.searchRecord(self)
 
             elif self.choice == 3:
                 print("\n\n",71*'-')

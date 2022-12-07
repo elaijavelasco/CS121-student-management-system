@@ -1,24 +1,44 @@
 import csv
 import sys
 
-class Admin:
+class Manage_Student_Database:
+    def __init__(self):
+        self.student_fields = ['Roll', 'Full Name', 'ID Number', 'Program', 'Year']
+        self.student_database = 'students.csv'
+
+class Admin_Database:
     def __init__(self, username, password):
         self.username = username
         self.password = password
 
-class Student_Database:
-    def __init__(self):
-        self.student_fields = ['Username', 'Password']
-        self.student_database = 'students.csv'
-
-class Admin_Database:
-    def __init__(self):
-        self.admin_fields = ['Username', 'Password']
-        self.admin_database = 'admin.csv'
+    admin_fields = ['Username', 'Password']
+    admin_database = 'admin.csv'
  
-class Admin_Menu(Admin_Database):
-    def __init__(self):
+class Admin(Admin_Database):
+    def __init__(self, username, paasword):
         super().__init__(self)
+
+        self.admin_logged_in = None
+    
+    def login(self):
+        print("\nYou are in Admin mode:")
+        username = input("Enter username: ")
+
+        if username not in Admin_Database.admin_database:
+            print ("Username or password invalid!")
+            return
+
+        password = input("Enter password: ")
+
+        admin = Admin_Database.admin_database[username]
+        
+        if admin.password not in Admin.admin_database:
+            print("Log in unsuccessful...")
+            return
+        
+        self.admin_logged_in = admin
+        print ("Successfully Logged in!")
+        self.adminMenu()
 
     def adminMenu(self):
         print("\n",71*'-')
@@ -47,58 +67,43 @@ class Admin_Menu(Admin_Database):
                     break
             
             if self.choice == 1:
-                Admin_Menu.login(self)
+                Admin.login(self)
 
             if self.choice == 2:
-                Admin_Menu.addRecord(self)
+                Admin.addRecord(self)
 
             if self.choice == 3:
-                Admin_Menu.viewRecords(self)
+                Admin.viewRecords(self)
 
             if self.choice == 4:
-                Admin_Menu.searchRecord(self)
+                Admin.searchRecord(self)
             
             if self.choice == 5:
-                Admin_Menu.updateRecord(self)
+                Admin.updateRecord(self)
             
             if self.choice == 6:
-                Admin_Menu.deleteRecord(self)
+                Admin.deleteRecord(self)
             
             if self.choice == 7:
-                Admin_Menu.logout(self)
+                Admin.logout(self)
             
             else:
                 break
-    def login (self):
-        username = input("Enter username: ")
-        if username not in self.admin_database:
-            print ("Username or password invalid!")
-            return
-        
-        password = input("Enter password: ")
-
-        admin = self.admin_database[username]
-        if admin.password != password:
-            print("Username or password is invalid! ")
-            return
-        
-        self.admin_logged_in = admin
-        print ("Successfully Logged in!")
 
     def addRecord(self):
-        student_data = []
+        self.student_data = []
 
         print("\n",71*'=')
         print("\n\t\t\t >> Fill-in Information << \n")
 
         for field in self.student_fields:
             value = input("\t\t\tEnter " + field + ": ")
-            student_data.append(value)
+            self.student_data.append(value)
         print("\n",71*'=')
 
-        with open(student_database, "a", encoding="utf-8") as f:
+        with open(self.student_database, "a", encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerows([student_data])
+            writer.writerows([self.student_data])
 
         print("\n\n\t\t\t** Data saved successfully! **")
         self.exit()
@@ -217,3 +222,4 @@ class Admin_Menu(Admin_Database):
     def exit(self):
         input("\n\n\t\t\tPress Enter key to continue...")
         print("\n")
+        return
