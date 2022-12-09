@@ -2,7 +2,7 @@
 Final Project in CS 121- Advanced Computer Programming
 
 ## :memo: Description
-**Student Management System** is a console application coded in Python programming language. This system used **CSV file** as database for storing records. It ables to display the records in table structured format. The project uses **CRUD** functionality that enable the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
+**Student Management System** is a console application coded in Python programming language. This system used ```CSV file``` as database for storing records. It ables to display the records in table structured format. The project uses ```CRUD functionality``` that enable the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
 
 ## :clipboard: Features
 + Display Main Menu
