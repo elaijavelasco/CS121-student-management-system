@@ -14,16 +14,16 @@ Student Management System provides the following features:
 #### Admin Mode 
 + Admin Login
 + Admin Menu 
-  * Add Student Record
-  * View Student Records
-  * Search Student Records
-  * Update Student Records
-  * Delete Student Records
+  * Add student records that will be stored in database
+  * View the stored student records
+  * Search student records 
+  * Update the stored records
+  * Delete specific student record
 
 #### Student Mode
 + Student Menu
-  * View Records
-  * Search Records
+  * View and retrieve records from database
+  * Search certain student record
 
 ## :computer: Installation
 1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
