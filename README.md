@@ -8,19 +8,14 @@ Final Project in CS 121- Advanced Computer Programming
 Student Management System provides the following features:
 
 #### Main App Menu UI
-#### Admin Mode 
-+ Admin Login
-+ Admin Menu 
-  * Add student records that will be stored in database
+#### Admin Mode                                                            #### Student Mode
++ Admin Login                                                              + Student Menu
++ Admin Menu                                                                 * View and retrieve records from database
+  * Add student records that will be stored in database                      * Search certain student record
   * View the stored student records
   * Search student records 
   * Update the stored records
   * Delete specific student record
-
-##### Student Mode
-+ Student Menu
-  * View and retrieve records from database
-  * Search certain student record
 
 ## :computer: Installation
 1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
