@@ -1,13 +1,8 @@
 from Admin import Admin
-import csv
 import sys
 
 class Student:
     def studentMenu(self):
-        print("\n",71*'-')
-        print("\n\t\t\tStudent Menu")
-        print("\n",71*'-')
-
         while True:
             print ("\n\t\tStudent Menu:\n")
             print("\t\t\t(1) View Student Records")

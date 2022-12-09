@@ -1,53 +1,42 @@
 from Student import Student
 from Admin import Admin
-import sys
-import msvcrt as m
 
+import sys
+
+#main app menu
 class App:
     def userMode(self):
-        print ("User Mode: ")
-        print ("1 - Admin")
-        print ("2 - Student")
-        print ("3 - Quit")        
+        print("\n",71*'-')
+        print("\n\t\t\tStudent Management System")
+        print("\n",71*'-')  
+        print ("\n\t\t\tChoose User Mode: \n")
+        print ("\t\t\t    1 - Admin Mode")
+        print ("\t\t\t    2 - Student Mode")
+        print ("\t\t\t    3 - Quit Menu")      
 
         option = ""
         try:
-
-            option = int(input("\nWhat user are you? "))
+            option = int(input("\n\t\t\tWhat user are you? "))
         except ValueError:
-            print("\nInvalid Entry!")
-        except Exception as E:
-            print(E)
-        
-            response = (input("\nTry again? [y/n]: "))
-            if response == 'y':
-                option = int(input("\nWhat user are you? "))
-            else:
-                sys.exit()
-                return
+            print("\n\t\tInvalid Entry! Input should be a number.")
+            App.back(self)
                 
         if option == 1:
+            print("\n",71*'=')
+            print("\n\t\t\t   >> ADMIN MODE <<")
             Admin.login(self)
-                
+                       
         elif option == 2:
+            print("\n",71*'=')
+            print("\n\t\t\t  >> STUDENT MODE <<")
             Student.studentMenu(self)
         
         elif option == 3:
-            print(".....Exiting.....")
-            print("\n........Press any key to continue.......")
-            m.getch()
             sys.exit()
+
         else:
-            print("\nInvalid Entry! Input should be from the option.\n")
-            return self.userMode()
-  
-def runApp():
-    app = App()
-    app.userMode()
-    
-runApp()
+            print("\n\t\tInvalid Entry! Input should be from the option.\n")
+            App.back(self)
 
-
-
-            
-
+    def back(self):
+        App.userMode(self)

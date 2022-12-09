@@ -2,120 +2,110 @@ import csv
 import sys
 
 class Manage_Student_Database:
-    def __init__(self):
-        self.student_fields = ['Roll', 'Full Name', 'ID Number', 'Program', 'Year']
-        self.student_database = 'students.csv'
+    student_fields = ['ID No.', 'Full Name', 'Program', 'Block', 'Year Level']
+    student_database = 'students.csv'
 
 class Admin_Database:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-    admin_fields = ['Username', 'Password']
+    admin_fields = ['Username' , 'Password']
     admin_database = 'admin.csv'
  
 class Admin(Admin_Database):
-    def __init__(self, username, paasword):
+    def __init__(self):
         super().__init__(self)
 
-        self.admin_logged_in = None
-    
+    #function for admin login   
     def login(self):
-        print("\nYou are in Admin mode:")
-        username = input("Enter username: ")
-
+        username = input("\n\t\t\tEnter username: ")
         if username not in Admin_Database.admin_database:
-            print ("Username or password invalid!")
-            return
+            print ("\n\t\t\tUsername invalid!")
+            Admin.login(self)
 
-        password = input("Enter password: ")
-
-        admin = Admin_Database.admin_database[username]
+        password = ""
+        try:
+            password = input("\t\t\tEnter password: ")
+            if password == 'user':
+                print("\n\t\t\tSuccessfully logged in!")
+                Admin.adminMenu(self)
+            else:
+                print("\n\t\t\tUsername or password invalid!")
+                Admin.login(self)    
+        except ValueError:
+            print("\n\t\t  Invalid Entry! You're unable to proceed.\n\n\n")
+            sys.exit()
         
-        if admin.password not in Admin.admin_database:
-            print("Log in unsuccessful...")
-            return
-        
-        self.admin_logged_in = admin
-        print ("Successfully Logged in!")
-        self.adminMenu()
-
     def adminMenu(self):
         print("\n",71*'-')
-        print("\n\t\t\tAdmin Menu")
+        print("\n\t\t\t Manage Student Record")
         print("\n",71*'-')
 
         while True:
-            print("\n\t\tMain Menu:\n")
-            print("\t\t\t(1) Login")
-            print("\t\t\t(2) Add New Student")
-            print("\t\t\t(3) View Student Records")
-            print("\t\t\t(4) Search Student Record")
-            print("\t\t\t(5) Update Student Record")
-            print("\t\t\t(6) Delete Student Record")
-            print("\t\t\t(7) Logout")
+            print("\n\t\tMenu:\n")
+            print("\t\t\t(1) Add New Student")
+            print("\t\t\t(2) View Student Records")
+            print("\t\t\t(3) Search Student Record")
+            print("\t\t\t(4) Update Student Record")
+            print("\t\t\t(5) Delete Student Record")
+            print("\t\t\t(6) Logout")
 
             self.choice = ""
             try:
-                self.choice = int(input("\nWhat do you want to do? "))
+                self.choice = int(input("\n\t\tWhat do you want to do? "))
             except ValueError:
-                print ("Invalid Entry!")
-                self.response = (input("\nTry again? [y/n]: "))
+                print ("\n\t\tInvalid Entry! Input should be a number.")
+                Admin.backToMenu(self)
 
-                while self.response == 'y':
-                    self.choice = int(input("Enter your choice: "))
-                    break
-            
             if self.choice == 1:
-                Admin.login(self)
-
-            if self.choice == 2:
                 Admin.addRecord(self)
 
-            if self.choice == 3:
+            elif self.choice == 2:
+                print("\n\n\t\t\t ** Student Records **")
                 Admin.viewRecords(self)
 
-            if self.choice == 4:
+            elif self.choice == 3:
+                print("\n\n\t\t\t** Search Student Record **\n")
                 Admin.searchRecord(self)
             
-            if self.choice == 5:
+            elif self.choice == 4:
+                print("\n\n\t\t\t** Update Student Information **\n")
                 Admin.updateRecord(self)
             
-            if self.choice == 6:
+            elif self.choice == 5:
+                print("\n\n\t\t\t *** Delete Student Information ***\n")
                 Admin.deleteRecord(self)
             
-            if self.choice == 7:
+            elif self.choice == 6:
                 Admin.logout(self)
             
-            else:
-                break
+            elif self.choice > 6:
+                print ("\n\t\tInvalid Entry! Choice should be from 1 to 6.")
+                Admin.backToMenu(self)
 
     def addRecord(self):
         self.student_data = []
 
         print("\n",71*'=')
         print("\n\t\t\t >> Fill-in Information << \n")
+        print("\t\tDon't leave it blank.")
 
-        for field in self.student_fields:
+        for field in Manage_Student_Database.student_fields:
             value = input("\t\t\tEnter " + field + ": ")
+            if value == "":
+                self.student_data.remove(value)
             self.student_data.append(value)
         print("\n",71*'=')
 
-        with open(self.student_database, "a", encoding="utf-8") as f:
+        with open(Manage_Student_Database.student_database, "a", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerows([self.student_data])
-
-        print("\n\n\t\t\t** Data saved successfully! **")
-        self.exit()
-        return
-        
-    def viewRecords (self):
-        print("\n\n\t\t\t ** Student Records **")
+            print("\n\n\t\t\t** Data saved successfully! **")
+        Admin.backToMenu(self)
+      
+    def viewRecords(self):
         print("\n",71*'-')
 
-        with open(student_database, "r", encoding="utf-8") as f:
+        with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
-            for x in self.student_fields:
+            for x in Manage_Student_Database.student_fields:
                 print(x, end="\t|   ")
             print("\n",71*'-')
 
@@ -123,103 +113,105 @@ class Admin(Admin_Database):
                 for item in row:
                     print(item, end="\t|   ")
                 print("\n")
-            
-            self.exit()
+            Admin.backToMenu(self)
     
     def searchRecord(self):
-        print("\n\n\t\t\t** Search Student Record **\n")
-        roll = input("\t\t\tEnter roll number to search: ")
-        with open(student_database, "r", encoding="utf-8") as f:
+        idnumber = input("\t\t\tEnter ID number to search: ")
+        with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
             for row in reader:
                 if len(row) > 0:
-                    if roll == row[0]:
+                    if idnumber == row[0]:
                         print("\n",71*'=')
                         print("\n\t\t\t   >> Student Record << \n")
-                        print("\t\t\t Roll: ", row[0])
+                        print("\t\t\t ID Number: ", row[0])
                         print("\t\t\t Full Name: ", row[1])
-                        print("\t\t\t ID Number: ", row[2])
-                        print("\t\t\t Program: ", row[3])
+                        print("\t\t\t Program: ", row[2])
+                        print("\t\t\t Block: ", row[3])
                         print("\t\t\t Year Level: ", row[4])
                         print("\n",71*'=')
                         break
             else:
-                print("\n\n\t\t** Roll number not found in our database! **")
-            
-            self.exit()
+                Admin.notFound(self)
     
     def updateRecord(self):
-        print("\n\n\t\t\t** Update Student Information **\n")
-        roll = input("\t\t\tEnter roll no. to update: ")
-        index_student = None
-        updated_data = []
-        with open(student_database, "r", encoding="utf-8") as f:
+        idnumber = input("\t\t\tEnter id number to update [e.g. 2101]: ")
+        self.index_student = None
+        self.updated_data = []
+
+        with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
             counter = 0
             for row in reader:
                 if len(row) > 0:
-                    if roll == row[0]:
-                        index_student = counter
-                        print("\n\t\t\tStudent found at index [",index_student, "] ")
+                    if idnumber == row[0]:
+                        self.index_student = counter
+                        print("\n\t\t\tStudent found at index [",self.index_student, "] ")
                         print("\n",71*'=')
                         print("\n\t\t\t>> Fill-in New Record << \n")
-                        student_data = []
-                        for field in self.student_fields:
+                        self.student_data = []
+                        for field in Manage_Student_Database.student_fields:
                             value = input("\t\t\tEnter " + field + ": ")
-                            student_data.append(value)
-                        updated_data.append(student_data)
+                            if value == "":
+                                self.student_data.remove(value)
+                            else:
+                                self.student_data.append(value)
+                        self.updated_data.append(self.student_data)
                         print("\n",71*'=')
-                        print("\n\n\t\t\t** Data saved successfully! **")
-                        
-                        print
+                        print("\n\n\t\t\t** Data saved successfully! **") 
+                        Admin.backToMenu(self)
+ 
                     else:
-                        updated_data.append(row)
+                        self.updated_data.append(row)
                     counter += 1
                     
         #checks if the student record is found or not
-        if index_student is not None:
-            with open(student_database, "w", encoding="utf-8") as f:
+        if self.index_student is not None:
+            with open(Manage_Student_Database.student_database, "w", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerows(updated_data)
+                writer.writerows(self.updated_data)
         else:
-            print("\n\t\t** Roll number not found in our database! **\n")
-
-        self.exit()
+            Admin.notFound(self)
 
     def deleteRecord(self):
-        print("\n\n\t\t\t ***Delete Student Information***\n")
-        roll = input("\t\t\tEnter roll number to delete: ")
-        student_found = False
-        updated_data = []
-        with open(student_database, "r", encoding="utf-8") as f:
+        idnumber = input("\t\t\tEnter ID number to delete: ")
+        self.student_found = False
+        self.updated_data = []
+        with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
             counter = 0
             for row in reader:
                 if len(row) > 0:
-                    if roll != row[0]:
-                        updated_data.append(row)
+                    if idnumber != row[0]:
+                        self.updated_data.append(row)
                         counter += 1
                     else:
-                        student_found = True
+                        self.student_found = True
 
-        if student_found is True:
-            with open(student_database, "w", encoding="utf-8") as f:
+        if self.student_found is True:
+            with open(Manage_Student_Database.student_database, "w", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerows(updated_data)
+                writer.writerows(self.updated_data)
             print("\n",71*'=')
-            print("\n\t\t\tRoll no. ", roll, "deleted successfully!")
+            print("\n\t\t\tID Number ", idnumber, "deleted successfully!")
             print("\n",71*'=')
-
         else:
-            print("\n\t\t** Roll number not found in our database! **\n")
+            Admin.notFound(self)
+    
+    def notFound(self):
+        print("\n\t\t** ID Number not found in our database! **\n")
+        Admin.backToMenu(self)
 
-        self.exit()
+    def backToMenu(self):
+        response = int(input("\n\t\t\tType '0' to be back on Menu: "))
+        if response == 0:
+            Admin.adminMenu(self)
+        else:
+            print("\n\t\t  Invalid Entry! You're unable to proceed.\n\n\n")
+            sys.exit()
 
     def logout(self):
-        print("Logged out!")
+        print("\n",73*'-')
+        print("\n\t\t\tSuccessfully logged out!")
+        print("\n",73*'-')
         sys.exit()
-    
-    def exit(self):
-        input("\n\n\t\t\tPress Enter key to continue...")
-        print("\n")
-        return
