@@ -19,7 +19,7 @@ Student Management System provides the following features:
 + Student Menu
   * View and retrieve records from database
   * Search certain student record
-
+ 
 ## :computer: Installation
 1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
 2. Click on the Code button, then download the repository as ZIP file.
