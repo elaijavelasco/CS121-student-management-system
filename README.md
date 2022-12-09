@@ -8,9 +8,6 @@ Final Project in CS 121- Advanced Computer Programming
 Student Management System provides the following features:
 
 #### Main App Menu UI
-+ Admin Mode
-+ Student Mode
-
 #### Admin Mode 
 + Admin Login
 + Admin Menu 
@@ -20,7 +17,7 @@ Student Management System provides the following features:
   * Update the stored records
   * Delete specific student record
 
-#### Student Mode
+##### Student Mode
 + Student Menu
   * View and retrieve records from database
   * Search certain student record
