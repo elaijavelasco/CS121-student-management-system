@@ -5,12 +5,25 @@ Final Project in CS 121- Advanced Computer Programming
 **Student Management System** is a console application coded in Python programming language. This system used ```CSV file``` as database for storing records. It ables to display the records in table structured format. The project uses ```CRUD functionality``` that enable the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
 
 ## :clipboard: Features
-+ Display Main Menu
-+ Add New Student 
-+ View Student Information
-+ Search Student Record
-+ Update Student Record
-+ Delete Student Information
+Student Management System provides the following features:
+
+### Main App Menu UI
++ Admin Mode
++ Student Mode
+
+### Admin Mode 
++ Admin Login
++ Admin Menu 
+  1. Add Student Record
+  2. View Student Records
+  3. Search Student Records
+  4. Update Student Records
+  5. Delete Student Records
+
+### Student Mode
++ Student Menu
+  1. View Records
+  2. Search Records
 
 ## :computer: Installation
 1. Click [Student Management System](https://github.com/elaijavelasco/CS121-student-management-system.git) to be directed to the project's repository.
