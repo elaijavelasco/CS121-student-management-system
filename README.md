@@ -1,6 +1,6 @@
 Student Management System
 =========================
-A console application coded in Python programming language that used ```csv``` as database for storing records. The main focus of this console app is to allow the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
+> A console application coded in Python programming language that used ```csv``` as database for storing records. The main focus of this console app is to allow the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
 
 🧐 Overview
 -------------
@@ -13,8 +13,8 @@ The csv database is obtained from importing the csv module by ```import csv``` t
 📌 Features
 -------------
 Student Management System provides the following features:
-##### Main App Menu UI
-##### Admin Mode                                                           
+##### 1. Main App Menu UI
+##### 2. Admin Mode                                                           
 + Admin Login                                                              
 + Admin Menu                                                                 
   * Add student records that will be stored in database                      
@@ -23,7 +23,7 @@ Student Management System provides the following features:
   * Sort student records in the database
   * Update the stored records
   * Delete specific student record
-##### Student Mode
+##### 3. Student Mode
 + Student Menu
   * View and retrieve records from database
   * Sort records for easy viewing
