@@ -1,6 +1,5 @@
 from Student import Student
 from Admin import Admin
-
 import sys
 
 #main app menu
@@ -32,10 +31,13 @@ class App:
             Student.studentMenu(self)
         
         elif option == 3:
+            print("\n\n\n",73*'-')
+            print("\n\t\t\tYou've exited the application!")
+            print("\n",73*'-')
             sys.exit()
 
         else:
-            print("\n\t\tInvalid Entry! Input should be from the option.\n")
+            print("\n\t  Invalid Entry! Input should be from the option.\n")
             App.back(self)
 
     def back(self):

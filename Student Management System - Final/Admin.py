@@ -1,4 +1,4 @@
-import csv
+import csv ,operator
 import sys
 
 class Manage_Student_Database:
@@ -43,9 +43,10 @@ class Admin(Admin_Database):
             print("\t\t\t(1) Add New Student")
             print("\t\t\t(2) View Student Records")
             print("\t\t\t(3) Search Student Record")
-            print("\t\t\t(4) Update Student Record")
-            print("\t\t\t(5) Delete Student Record")
-            print("\t\t\t(6) Logout")
+            print("\t\t\t(4) Sort Student Record")
+            print("\t\t\t(5) Update Student Record")
+            print("\t\t\t(6) Delete Student Record")
+            print("\t\t\t(7) Logout")
 
             self.choice = ""
             try:
@@ -58,25 +59,29 @@ class Admin(Admin_Database):
                 Admin.addRecord(self)
 
             elif self.choice == 2:
-                print("\n\n\t\t\t ** Student Records **")
+                print("\n\n\t\t\t ** Students Records **")
                 Admin.viewRecords(self)
-
+            
             elif self.choice == 3:
                 print("\n\n\t\t\t** Search Student Record **\n")
                 Admin.searchRecord(self)
-            
+                
             elif self.choice == 4:
+                print("\n\n\t\t\t ** Sorted Records **")
+                Admin.sortRecords(self)
+            
+            elif self.choice == 5:
                 print("\n\n\t\t\t** Update Student Information **\n")
                 Admin.updateRecord(self)
             
-            elif self.choice == 5:
+            elif self.choice == 6:
                 print("\n\n\t\t\t *** Delete Student Information ***\n")
                 Admin.deleteRecord(self)
             
-            elif self.choice == 6:
+            elif self.choice == 7:
                 Admin.logout(self)
             
-            elif self.choice > 6:
+            else:
                 print ("\n\t\tInvalid Entry! Choice should be from 1 to 6.")
                 Admin.backToMenu(self)
 
@@ -102,7 +107,6 @@ class Admin(Admin_Database):
       
     def viewRecords(self):
         print("\n",71*'-')
-
         with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
             for x in Manage_Student_Database.student_fields:
@@ -113,10 +117,10 @@ class Admin(Admin_Database):
                 for item in row:
                     print(item, end="\t|   ")
                 print("\n")
-            Admin.backToMenu(self)
+            sys.exit()
     
     def searchRecord(self):
-        idnumber = input("\t\t\tEnter ID number to search: ")
+        idnumber = input("\n\t\t\tEnter ID number to search: ")
         with open(Manage_Student_Database.student_database, "r", encoding="utf-8") as f:
             reader = csv.reader(f)
             for row in reader:
@@ -133,9 +137,24 @@ class Admin(Admin_Database):
                         break
             else:
                 Admin.notFound(self)
+        sys.exit()
     
+    def sortRecords(self):
+        print("\n",71*'-')
+        data = csv.reader(open('students.csv'), delimiter=',')
+        data = sorted(data, key=operator.itemgetter(1))
+        for x in Manage_Student_Database.student_fields:
+            print(x, end="\t|   ")
+        print("\n",71*'-')
+
+        for row in data:
+            for item in row:
+                print(item, end="\t|   ")
+            print("\n")
+        sys.exit()
+        
     def updateRecord(self):
-        idnumber = input("\t\t\tEnter id number to update [e.g. 2101]: ")
+        idnumber = input("\t\tEnter id number to update [e.g.: 2101442]: ")
         self.index_student = None
         self.updated_data = []
 
@@ -199,8 +218,8 @@ class Admin(Admin_Database):
             Admin.notFound(self)
     
     def notFound(self):
-        print("\n\t\t** ID Number not found in our database! **\n")
-        Admin.backToMenu(self)
+        print("\n\t\t There's no such ID number in the database!\n")
+        sys.exit()
 
     def backToMenu(self):
         response = int(input("\n\t\t\tType '0' to be back on Menu: "))
@@ -211,7 +230,7 @@ class Admin(Admin_Database):
             sys.exit()
 
     def logout(self):
-        print("\n",73*'-')
+        print("\n\n\n",73*'-')
         print("\n\t\t\tSuccessfully logged out!")
         print("\n",73*'-')
         sys.exit()
