@@ -3,11 +3,11 @@ import sys
 
 class Manage_Student_Database:
     student_fields = ['ID No.', 'Full Name', 'Program', 'Block', 'Year Level']
-    student_database = 'students.csv'
+    student_database = 'students_database.csv'
 
 class Admin_Database:
     admin_fields = ['Username' , 'Password']
-    admin_database = 'admin.csv'
+    admin_database = 'admin_database.csv'
  
 class Admin(Admin_Database):
     def __init__(self):
@@ -141,7 +141,7 @@ class Admin(Admin_Database):
     
     def sortRecords(self):
         print("\n",71*'-')
-        data = csv.reader(open('students.csv'), delimiter=',')
+        data = csv.reader(open('students_database.csv'), delimiter=',')
         data = sorted(data, key=operator.itemgetter(1))
         for x in Manage_Student_Database.student_fields:
             print(x, end="\t|   ")
