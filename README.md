@@ -1,6 +1,6 @@
 Student Management System
 =========================
-> A console application coded in Python programming language that used ```csv``` as database for storing records. The main focus of this console app is to allow the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
+A console application coded in Python programming language that used ```csv``` as database for storing records. The main focus of this console app is to allow the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
 
 🧐 Overview
 -------------
@@ -8,7 +8,7 @@ Our system handle records with the aid of the following sources:
 1. This project uses ```csv``` as database. The imported database writes data in the format preferred by ```Excel```.
 2. ```operator``` module: Used to sort all student records stored in our database.
 
-The csv database is obtained from importing the csv module by ```import csv``` to create the databases that we use: ```students.csv``` and ```admin.csv```. It contains the student records managed by the Admin user and the login information of the admin. We used csv module’s ```reader``` and ```writer``` objects to read and write data from user and store it. Apart from this source that describe the SMS data, we also use the operator module, which is mainly used for sorting the records for easy viewing. It provides the method ```operator.itemgetter()``` to retrieve specific field. In the program it is used as ```data = sorted(data, key=operator.itemgetter(1))``` to ```sort``` the stored data in our csv database.
+> The csv database is obtained from importing the csv module by ```import csv``` to create the databases that we use: ```students.csv``` and ```admin.csv```. It contains the student records managed by the Admin user and the login information of the admin. We used csv module’s ```reader``` and ```writer``` objects to read and write data from user and store it. Apart from this source that describe the SMS data, we also use the operator module, which is mainly used for sorting the records for easy viewing. It provides the method ```operator.itemgetter()``` to retrieve specific field. In the program it is used as ```data = sorted(data, key=operator.itemgetter(1))``` to ```sort``` the stored data in our csv database.
 
 📌 Features
 -------------
