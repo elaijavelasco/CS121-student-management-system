@@ -73,7 +73,7 @@ Main.py                 |  Python file that contains the driver code
 -----------------
 For our project demo, click [Student Management System Demo]() to see the presentation of the codes and live simulation of the program.
 <p align="center">
-    <img alt="SampleOutput" title="SMS Sample Output" src="SMS_Sample_Output.png" width="400">
+    <img alt="SampleOutput" title="SMS Sample Output" src="SMS_Sample_Output.png" width="900">
 </p>
  
 💻 Installation
