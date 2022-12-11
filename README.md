@@ -49,11 +49,11 @@ Student Management System provides the following features:
 ------------------------
 Non-Python files:
 
-filename                |  description
-------------------------|------------------------------------------------------------------------------------
-README.md               |  Text file (markdown format) description of the project.
-students.csv            |  CSV file, used as database for student records.
-admin.csv               |  CSV file, used as database for admin login information.
+filename                    |  description
+----------------------------|------------------------------------------------------------------------------------
+README.md                   |  Text file (markdown format) description of the project.
+students_database.csv       |  CSV file, used as database for student records.
+admin_database.csv          |  CSV file, used as database for admin login information.
 
 Modules:
 
