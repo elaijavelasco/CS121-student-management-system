@@ -93,6 +93,10 @@ For our project demo, click [Student Management System Demo](https://www.youtube
 + [Python](https://www.python.org/) for reference in using [csv](https://docs.python.org/3/library/csv.html) module and [operator](https://docs.python.org/3/library/operator.html) module
 + [PlantUML](https://plantuml.com/) for reference in creating class diagram
 
+👩‍💻Contributors
+----------------
++ https://github.com/ErickVonnDavidBalintataw
++ https://github.com/MaPiaPaulaC
 
 ⚠️ License
 ------------
