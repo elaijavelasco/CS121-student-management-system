@@ -2,7 +2,7 @@ Student Management System
 =========================
 A console application coded in Python programming language that used ```csv``` as database for storing records. The main focus of this console app is to allow the users to manipulate student information stored in the database.  This project is a user-friendly application created to store and monitor student records conveniently. 
 
-🧐 Overview
+🤔 Overview
 -------------
 Our system handle records with the aid of the following sources:
 1. This project uses ```csv``` as database. The imported database writes data in the format preferred by ```Excel```.
@@ -29,12 +29,10 @@ Student Management System provides the following features:
   * Sort records for easy viewing
   * Search certain student record
 
-UML Class Diagram
+🧐 Diagram
 ------------------
 <p align="center">
-  <a href="https://gitpoint.co/">
-    <img alt="ClassDiagram" title="Class Diagram" src="Student_Management_System_UML_Class_Diagram.png" width="450">
-  </a>
+    <img alt="ClassDiagram" title="Class Diagram" src="Student_Management_System_UML_Class_Diagram.png" width="500">
 </p>
 
 💡 Dependencies
@@ -73,7 +71,10 @@ Main.py                 |  Python file that contains the driver code
 
 🧑‍💻 Project Demo
 -----------------
-
+For our project demo, click [Student Management System Demo]() to see the presentation of the codes and live simulation of the program.
+<p align="center">
+    <img alt="SampleOutput" title="SMS Sample Output" src="SMS_Sample_Output.png" width="400">
+</p>
  
 💻 Installation
 ----------------
