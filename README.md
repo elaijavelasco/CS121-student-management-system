@@ -31,7 +31,7 @@ Student Management System provides the following features:
 
 UML Class Diagram
 ------------------
-![alt text](//www.plantuml.com/plantuml/png/ZPBFIWCn48VlUOhOamhx0gNK5aJmi23QUvbknjtWPcR9drRGlhjXDqsZfU2jy_s-P9gTMJaFrWVJYnlVeK6vrpiBvCKBD1_GefmPLg57DvDVekd1ERbMHjFYGUAdHrAftZw2XnquN4Pl978kUsurtTw9eqpellfZHwc3FSfb5YfP0yN6spSV598lrU1AKoOZ1cOyahDAyO6gfLmFWpX9Y--g6i5HY1fIgrZdQw-tTGczQ-oL-uUe4X8NZuKHf8kkfENfyZEcEcarKlZ5r2isR5N1zXeF4tG5TGYswRASCLj_AOT1WSTBhh374oymiN_YG2NQnJtQSFwt-KKSVDd7eIKmE8z3jPhQ70nnumwnIGxEGsywraqyyKmUMxGvoND8JS-yvGtBHAVHy-0rq_cEl12sPeL9cnuHYngcRnstAFsqWQ8HenMI2gR_0G00)
+
 
 💡 Dependencies
 ----------------
