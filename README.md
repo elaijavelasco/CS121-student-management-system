@@ -44,6 +44,7 @@ Student Management System provides the following features:
 + Some codes depends on the ```operator``` module.
   * ```Admin.py```
 + Some codes depends on the ```sys``` module.
+  * ```App.py```
 
 ✍️ Description of Files
 ------------------------
