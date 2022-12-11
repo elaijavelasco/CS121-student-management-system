@@ -91,6 +91,7 @@ For our project demo, click [Student Management System Demo]() to see the presen
 + [GeeksForGeeks](https://www.geeksforgeeks.org/) were incredibly helpful while I was building the program
 + [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet?fbclid=IwAR2wjT8IG-2nDMH-PZWVG3MtUFPcu9asQ-bJfOUmn3T2H8QrLRYxVSDuqZ8) for quick reference 
 + [Python](https://www.python.org/) for reference in using [csv](https://docs.python.org/3/library/csv.html) module and [operator](https://docs.python.org/3/library/operator.html) module
++ [PlantUML](https://plantuml.com/) for reference in creating class diagram
 
 ⚠️ License
 ------------
