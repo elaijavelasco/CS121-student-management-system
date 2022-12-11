@@ -95,8 +95,9 @@ For our project demo, click [Student Management System Demo](https://www.youtube
 
 👩‍💻Contributors
 ----------------
-+ https://github.com/ErickVonnDavidBalintataw
-+ https://github.com/MaPiaPaulaC
++ [Elaija Heart Velasco](https://github.com/elaijavelasco)
++ [Erick Vonn David Balintataw](https://github.com/ErickVonnDavidBalintataw)
++ [Ma Pia Paula Celemin](https://github.com/MaPiaPaulaC)
 
 ⚠️ License
 ------------
