@@ -31,7 +31,11 @@ Student Management System provides the following features:
 
 UML Class Diagram
 ------------------
-
+<p align="center">
+  <a href="https://gitpoint.co/">
+    <img alt="ClassDiagram" title="Class Diagram" src="Student_Management_System_UML_Class_Diagram.png" width="450">
+  </a>
+</p>
 
 💡 Dependencies
 ----------------
