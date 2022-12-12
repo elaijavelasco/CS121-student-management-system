@@ -31,7 +31,7 @@ Student Management System provides the following features:
 
 🧐 Diagram
 ------------------
-For the actual UML, click [here](//www.plantuml.com/plantuml/png/ZPBFIWCn48VlUOhOamhx0gNK5aJmi23QUvbknjtWPcR9drRGlhjXDqsZfU2jy_s-P9gTMJaFrWVJYnlVeK6vrpiBvCKBD1_GefmPLg57DvDVekd1ERbMHjFYGUAdHrAftZw2XnquN4Pl978kUsurtTw9eqpellfZHwc3FSfb5YfP0yN6spSV598lrU1AKoOZ1cOyahDAyO6gfLmFWpX9Y--g6i5HY1fIgrZdQw-tTGczQ-oL-uUe4X8NZuKHf8kkfENfyZEcEcarKlZ5r2isR5N1zXeF4tG5TGYswRASCLj_AOT1WSTBhh374oymiN_YG2NQnJtQSFwt-KKSVDd7eIKmE8z3jPhQ70nnumwnIGxEGsywraqyyKmUMxGvoND8JS-yvGtBHAVHy-0rq_cEl12sPeL9cnuHYngcRnstAFsqWQ8HenMI2gR_0G00)
+This UML Class diagram visualize our system. It describes the structure of our system by its classes, attributes, operations, and their relationships. For the actual UML, click [here](SMS_UML.puml)
 <p align="center">
     <img alt="ClassDiagram" title="Class Diagram" src="img/Student_Management_System_UML_Class_Diagram.png" width="500">
 </p>
