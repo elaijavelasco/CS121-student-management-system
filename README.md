@@ -33,7 +33,7 @@ Student Management System provides the following features:
 ------------------
 For the actual UML, click [here](//www.plantuml.com/plantuml/png/ZPBFIWCn48VlUOhOamhx0gNK5aJmi23QUvbknjtWPcR9drRGlhjXDqsZfU2jy_s-P9gTMJaFrWVJYnlVeK6vrpiBvCKBD1_GefmPLg57DvDVekd1ERbMHjFYGUAdHrAftZw2XnquN4Pl978kUsurtTw9eqpellfZHwc3FSfb5YfP0yN6spSV598lrU1AKoOZ1cOyahDAyO6gfLmFWpX9Y--g6i5HY1fIgrZdQw-tTGczQ-oL-uUe4X8NZuKHf8kkfENfyZEcEcarKlZ5r2isR5N1zXeF4tG5TGYswRASCLj_AOT1WSTBhh374oymiN_YG2NQnJtQSFwt-KKSVDd7eIKmE8z3jPhQ70nnumwnIGxEGsywraqyyKmUMxGvoND8JS-yvGtBHAVHy-0rq_cEl12sPeL9cnuHYngcRnstAFsqWQ8HenMI2gR_0G00)
 <p align="center">
-    <img alt="ClassDiagram" title="Class Diagram" src="Student_Management_System_UML_Class_Diagram.png" width="500">
+    <img alt="ClassDiagram" title="Class Diagram" src="img/Student_Management_System_UML_Class_Diagram.png" width="500">
 </p>
 
 💡 Dependencies
@@ -76,7 +76,7 @@ Main.py                 |  Python file that contains the driver code
 For our project demo, click [Student Management System Demo](https://www.youtube.com/watch?v=OEotgZwW5k4) to see the presentation of the codes and live simulation of the program.
 
 <p align="center">
-    <img alt="SampleOutput" title="SMS Sample Output" src="SMS_Sample_Output.png" width="800">
+    <img alt="SampleOutput" title="SMS Sample Output" src="img/SMS_Sample_Output.png" width="800">
 </p>
  
 💻 Installation
