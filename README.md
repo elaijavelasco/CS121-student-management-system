@@ -31,7 +31,7 @@ Student Management System provides the following features:
 
 🧐 Diagram
 ------------------
-This UML Class diagram visualize our system. It describes the structure of our system by its classes, attributes, operations, and their relationships. For the actual UML, click [here](SMS_UML.puml)
+This UML Class diagram visualizes our system. It describes the structure of our system by its classes, attributes, operations, and their relationships. For the actual UML, click [here](SMS_UML.puml).
 <p align="center">
     <img alt="ClassDiagram" title="Class Diagram" src="img/Student_Management_System_UML_Class_Diagram.png" width="500">
 </p>
