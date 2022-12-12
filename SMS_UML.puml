@@ -1,0 +1,39 @@
+@startuml
+!theme vibrant
+Package "modules" {
+class Admin<? extends Admin_Database> {
+Admin : login()
+} 
+Admin *- Admin_Database : have >
+Admin *-- Manage_Student_Database : use >
+Admin *- Student : manage >
+Admin -down-> App
+Student <|-- App
+}
+Main *-- App : use >
+Manage_Student_Database : student_fields
+Manage_Student_Database : student_database
+Admin_Database : admin_fields
+Admin_Database : admin_database
+Admin : login()
+Admin : adminMenu()
+Admin : addRecord()
+Admin : viewRecords()
+Admin : searchRecord()
+Admin : sortRecords()
+Admin : updateRecords()
+Admin : deleteRecord()
+Admin : notFound()
+Admin : backToMenu()
+Admin : logout()
+Admin : username: String
+Admin : password: String
+Student : choice: Integer
+Student : studentMenu()
+Student : goTo Menu()
+App : option: Integer
+App : userMode()
+App : back()
+Main : app
+Main : runApp()
+@enduml
